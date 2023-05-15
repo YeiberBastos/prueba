@@ -1,0 +1,21 @@
+span{
+    text-decoration: none;
+    color: white;
+}
+
+span:hover{
+    text-decoration: none;
+    color: rgb(255, 183, 15);
+}
+tr{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+td{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}

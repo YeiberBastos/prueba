@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "name-input": "david",
+      "password": "123",
+      "number-input": "345",
+      "Email-input": "gtedfg",
+      "id": 1
+    },
+    {
+      "name-input": "luna",
+      "password": "123",
+      "number-input": "345",
+      "Email-input": "gtedfg",
+      "id": 2
+    },
+    {
+      "name-input": "yepe",
+      "password": "123",
+      "number-input": "345",
+      "Email-input": "gtedfg",
+      "id": 3
+    },
+    {
+      "name-input": "yepe",
+      "password": "1234",
+      "number-input": "345",
+      "Email-input": "gtedfg",
+      "id": 4
+    },
+    {
+      "name-input": "yepe",
+      "password": "12345",
+      "number-input": "345",
+      "Email-input": "gtedfg",
+      "id": 5
+    }
+  ],
+  "categorias": [],
+  "productos": [],
+  "usuarios": [],
+  "Clientes": []
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css bootstrap/bootstrap.min.css">
+    <script src="../js bootstrap/bootstrap.min.js" defer></script>
+    <script src="../js/modalusuarios.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>usuarios</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color: rgb(31, 34, 46);">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/"
+                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <img src="../img/logo.png" alt="" width="150px">
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                        id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">categorias</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../productos/index.html" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Productos</span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="../Clientes/index.html" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">clientes</span></a>
+                        </li>
+                        <li>
+                            <a href="../usuarios/index.html" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Usuarios</span></a>
+
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">ventas</span> </a>
+
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">compras</span> </a>
+                        </li>
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-speedometer2"></i> <span
+                                    class="ms-1 d-none d-sm-inline">reportes</span> </a>
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="content">
+                <div class="col-2 py-3" style="background-color: rgb(27, 37, 68); color: white;">
+                    <!-- Button trigger modal -->
+                    <h3>SISTEMA FACTURACION Y MARKETING</h3>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: black;">Registrar Nueva Categoria</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="myForm">
+                                        <label style="color: black;">Nombre:</label>
+                                        <input type="text" name="name"><br><br>
+
+                                        <button type="submit" style="background-color: rgb(0, 132, 255); border-radius: 10px;">Agregar</button>
+                                        
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-10 py-3">
+                    <h2 style="color: white;">Tabla de datos</h2>
+                    <table id="user-table" border="1" style="width: 100%;">
+                        <thead style="color: white;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>password</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    </div>
+                
+                
+            </div>
+            
+
+        </div>
+
+</body>
+
+</html>

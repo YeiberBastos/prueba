@@ -1,0 +1,9 @@
+span{
+    text-decoration: none;
+    color: white;
+}
+
+span:hover{
+    text-decoration: none;
+    color: rgb(255, 183, 15);
+}
