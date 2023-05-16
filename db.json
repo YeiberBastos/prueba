@@ -1,19 +1,6 @@
 {
   "users": [],
-  "categorias": [
-    {
-      "name": "noel",
-      "id": 1
-    }
-  ],
-  "productos": [
-    {
-      "name": "noel",
-      "product": "afa",
-      "price": "1231",
-      "id": 1
-    }
-  ],
-  "usuarios": [],
+  "categorias": [],
+  "productos": [],
   "Clientes": []
 }

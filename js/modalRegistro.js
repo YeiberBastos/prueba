@@ -19,37 +19,6 @@ registerForm.addEventListener('submit', async (e) => {
   registerForm.reset();
 });
 
-const suserForm = document.getElementById('user-form');
-userForm.addEventListener('submit', event => {
-	event.preventDefault();
-	
-	const nameInput = document.getElementById('name-input');
-	const imageInput = document.getElementById('image-input');
-	const numberInput = document.getElementById('number-input');
-	const addressInput = document.getElementById('address-input');
-	
-	fetch('http://localhost:3000/usuarios', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			name: nameInput.value,
-			image: imageInput.value,
-			number: numberInput.value,
-			address: addressInput.value
-		})
-	})
-	.then(response => response.json())
-	.then(data => {
-		alert(`Usuario registrado con éxito:\n\nID: ${data.id}\nNombre: ${data.name}\nNúmero: ${data.number}\nDirección: ${data.address}`);
-		userForm.reset();
-	})
-	.catch(error => {
-		console.error('Error al registrar usuario:', error);
-	});
-});
-
 // Inicio de sesión
 let loginForm = document.querySelector('#loginForm');
 
@@ -62,7 +31,7 @@ loginForm.addEventListener('submit', async (e) => {
       alert('Inicio de sesión exitoso');
       loginForm.reset();
       // Redirigir a la página de inicio
-      window.location.href = '../panelinicio/iindex.html';
+      window.location.href = 'panelInicio/index.html';
     } else {
       alert('Usuario o contraseña incorrectos');
     }
