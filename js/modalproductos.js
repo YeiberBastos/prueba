@@ -1,56 +1,72 @@
-// Hacer una solicitud a un servidor para obtener los datos en formato JSON
-fetch("http://localhost:3000/productos")
-  .then(response => response.json())
-  .then(data => {
-    // Crear una variable para almacenar los datos de los productos
-    let productos = "";
+const url = "http://localhost:3000/productos";
+const dataTable = document.getElementById('dataTable');
 
-    // Recorrer los datos y agregarlos a la variable
-    data.forEach(producto => {
-      productos += `
-        <tr>
-          <td>${producto.registrar}</td>
-          <td>${producto.id}</td>
-          <td>${producto.categoria}</td>
-          <td>${producto.producto}</td>
-          <td>${producto.precio}</td>
-          <td><button onclick="borrarProducto(${producto.id})">Borrar</button></td>
-        </tr>
-      `;
-    });
+document.getElementById('myForm').addEventListener('submit', function(e) {
+	e.preventDefault();
+	const data = {
+		name: document.querySelector('input[name=name]').value,
+		product: document.querySelector('input[name=product]').value,
+		price: document.querySelector('input[name=price]').value
+	};
 
-    // Agregar los datos de los productos a la tabla HTML
-    document.getElementById("tablaProductos").innerHTML = productos;
-  })
-  .catch(error => console.error(error));
+	fetch(url, {
+		method: 'POST',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})
+	.then(response => response.json())
+	.then(data => {
+		displayData(data);
+	})
+	.catch(error => console.error(error));
+});
 
-// Función para borrar un producto
-function borrarProducto(id) {
-  // Hacer una solicitud al servidor para borrar el producto con el ID dado
-  fetch(`http://localhost:3000/productos/${id}`, { method: "DELETE" })
-    .then(response => {
-      if (response.ok) {
-        // Actualizar la tabla HTML
-        fetch("http://localhost:3000/productos")
-          .then(response => response.json())
-          .then(data => {
-            let productos = "";
-            data.forEach(producto => {
-              productos += `
-                <tr>
-                  <td>${producto.registrar}</td>
-                  <td>${producto.id}</td>
-                  <td>${producto.categoria}</td>
-                  <td>${producto.producto}</td>
-                  <td>${producto.precio}</td>
-                  <td><button onclick="borrarProducto(${producto.id})">Borrar</button></td>
-                </tr>
-              `;
-            });
-            document.getElementById("tablaProductos").innerHTML = productos;
-          })
-          .catch(error => console.error(error));
-      }
-    })
-    .catch(error => console.error(error));
+function displayData(data) {
+	const row = document.createElement('tr');
+	const idCell = document.createElement('td');
+	const nameCell = document.createElement('td');
+	const productCell = document.createElement('td');
+	const priceCell = document.createElement('td');
+	const actionsCell = document.createElement('td');
+	const deleteButton = document.createElement('button');
+
+	idCell.textContent = data.id;
+	nameCell.textContent = data.name;
+	productCell.textContent = data.product;
+	priceCell.textContent = data.price;
+	deleteButton.textContent = 'Eliminar';
+
+	deleteButton.addEventListener('click', function(e) {
+		e.preventDefault();
+		fetch(`${url}/${data.id}`, {
+			method: 'DELETE'
+		})
+		.then(response => {
+			if (response.ok) {
+				row.remove();
+			}
+		})
+		.catch(error => console.error(error));
+	});
+
+	actionsCell.appendChild(deleteButton);
+
+	row.appendChild(idCell);
+	row.appendChild(nameCell);
+	row.appendChild(productCell);
+	row.appendChild(priceCell);
+	row.appendChild(actionsCell);
+
+	dataTable.querySelector('tbody').appendChild(row);
 }
+
+fetch(url)
+.then(response => response.json())
+.then(data => {
+	for (let i = 0; i < data.length; i++) {
+		displayData(data[i]);
+	}
+})
+.catch(error => console.error(error));

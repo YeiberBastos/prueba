@@ -25,14 +25,14 @@
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item">
-                            <a href="../categorias/iindex.html" class="nav-link align-middle px-0">
+                            <a href="#" class="nav-link align-middle px-0">
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">categorias</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Productos</span> </a>
+                            <a href="../productos/index.html" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Productos</span>
+                            </a>
 
                         </li>
                         <li>
@@ -40,8 +40,10 @@
                                 <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">clientes</span></a>
                         </li>
                         <li>
-                            <a href="../usuarios/index.html" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Usuarios</span></a>
+                            <a href="../usuarios/index.html" data-bs-toggle="collapse"
+                                class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span
+                                    class="ms-1 d-none d-sm-inline">usuarios</span></a>
 
                         </li>
                         <li>
@@ -68,127 +70,66 @@
             <div class="content">
                 <div class="col-2 py-3" style="background-color: rgb(27, 37, 68); color: white;">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registrarModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
                         <img src="../img/Screenshot from 2023-05-09 13-11-53.png" alt="">
-                            PRODUCTO</button>
-
+                        AGREGAR
+                    </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="registrarModalLabel">Registrar nuevo producto</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: black;">
+                                        Registrar Nueva Categoria</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="myForm">
+                                        <label for="name" style="color: black;">Nombre:</label>
+                                        <input type="text" name="name" id="name" required>
+                                
+                                        <label for="product">Producto:</label>
+                                        <input type="text" name="product" id="product" required>
+                                
+                                        <label for="price">Precio:</label>
+                                        <input type="number" name="price" id="price" required>
+                                
+                                        <button type="submit">Enviar</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
                             </div>
-                            <div class="modal-body">
-                              <form>
-                                <div class="mb-3">
-                                  <label for="registrarInput" class="form-label" style="color: black;">Registrar</label>
-                                  <input type="text" class="form-control" id="registrarInput">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="idInput" class="form-label" style="color: black;">ID</label>
-                                  <input type="text" class="form-control" id="idInput">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="categoriaInput" class="form-label" style="color: black;">Categoría</label>
-                                  <input type="text" class="form-control" id="categoriaInput">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="productoInput" class="form-label" style="color: black;">Producto</label>
-                                  <input type="text" class="form-control" id="productoInput">
-                                </div>
-                                <div class="mb-3">
-                                  <label for="precioInput" class="form-label" style="color: black;">Precio</label>
-                                  <input type="text" class="form-control" id="precioInput">
-                                </div>
-                              </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-primary" id="registrarProductoBtn">Registrar</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                    
+                    </div>
+
 
                 </div>
                 <div class="col-10 py-3">
                     <h2 style="color: white;">Tabla de datos</h2>
-                    <table border="1" style="width: 100%;">
-                        <thead>
-                          <tr>
-                            <th>Registrar</th>
-                            <th>ID</th>
-                            <th>Categoría</th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Borrar</th>
-                          </tr>
+                    <table id="dataTable" border="1" style="width: 100%;">
+                        <thead style="color: white;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                            </tr>
                         </thead>
-                        <tbody id="tablaProductos">
+                        <tbody>
                         </tbody>
-                      </table>
-                    </div>
-                    <br>
-                    <br>
+                    </table>
+                </div>
 
-                    <div class="col-2 py-3" style="background-color: rgb(27, 37, 68); color: white;">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            <img src="../img/Screenshot from 2023-05-09 13-11-53.png" alt="">
-                            AGREGAR
-                        </button>
-    
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: black;">Registrar Nueva Categoria</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="myForm">
-                                            <label style="color: black;">Nombre:</label>
-                                            <input type="text" name="name"><br><br>
-    
-                                            <button type="submit" style="background-color: rgb(0, 132, 255); border-radius: 10px;">Agregar</button>
-                                            
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-    
-                    </div>
-                    <div class="col-10 py-5">
-                        <h2 style="color: white;">Tabla de datos</h2>
-                        <table id="dataTable" border="1" style="width: 110%;">
-                            <thead style="color: white;">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Categorias</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        </div>
-                
-                
+
             </div>
-            
+
 
         </div>
 
