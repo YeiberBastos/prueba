@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css bootstrap/bootstrap.min.css">
     <script src="../js bootstrap/bootstrap.min.js" defer></script>
-    <script src="../js/modalcategoria.js" defer></script>
+    <script src="../js/modalClientes.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
     <title>categorias</title>
@@ -83,10 +83,50 @@
             </div>
             <div class="content">
                 <div class="col-2 py-3" style="background-color: rgb(27, 37, 68); color: white;">
-                        <h3>SISTEMA FACTURACION Y MARKETING</h3>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                    <img src="../img/Screenshot from 2023-05-09 13-11-53.png" alt="">
+                    AGREGAR
+                </button>
+                <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="categoryModalLabel">Registrar nuevo cliente</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        
+                            <div class="row">
+                                <div class="col-12 p-3">
+                                    <h6 style="color: black;">Nombre</h6>
+                                    <input type="text" id="addName" name="modalName" class="w-100 p-1">
+                                </div>
+                                <div class="col-6 p-3">
+                                    <h6 style="color: black;">Celular</h6>
+                                    <input type="text" id="addPhone" name="modalPhone" class="w-100 p-1">
+                                </div>
+                                <div class="col-6 p-3">
+                                    <h6 style="color: black;">Dirección</h6>
+                                    <input type="text" id="addAddress" name="modalAddress" class="w-100 p-1">
+                                </div>
+                                <div class="col-12 p-3">
+                                    <h6 style="color: black;">Foto (url)</h6>
+                                    <input type="text" id="addImg" name="modalImg" class="w-100 p-1">
+                                </div>
+    
+                            </div>
+    
+                        </div>
+                        <div class="modal-footer">
+                        <button type="submit"  id="addClientForm" style="background-color: rgb(0, 132, 255); border-radius: 10px;" class="btn modalBtn-save btnEnviar">Agregar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -109,13 +149,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
 
                 </div>
                 <div class="col-10 py-3">
                     <h2 style="color: white;">Tabla de datos</h2>
-                    <table id="user-table" border="1" style="width: 100%;">
+                    <table id="user-table" border="1" style="width: 80%;">
                         <thead style="color: white;">
                             <tr>
                                 <th>ID</th>

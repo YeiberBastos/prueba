@@ -1,5 +1,7 @@
 const API_URL = 'http://localhost:3000/Clientes';
 
+
+
 // Función para mostrar la imagen seleccionada en el formulario
 function previewImage(event) {
   const file = event.target.files[0];
@@ -19,12 +21,12 @@ function previewImage(event) {
 // Función para agregar un nuevo cliente
 function addClient(event) {
   event.preventDefault();
-  const firstName = document.getElementById('firstName').value;
+  const firstName = document.getElementById('addName').value;
   const lastName = document.getElementById('lastName').value;
   const photo = document.getElementById('photo').files[0];
 
   const formData = new FormData();
-  formData.append('firstName', firstName);
+  formData.append('addName', addName);
   formData.append('lastName', lastName);
   formData.append('photo', photo);
 

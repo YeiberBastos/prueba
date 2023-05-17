@@ -19,3 +19,115 @@ td{
     font-weight: 600;
     color: white;
 }
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --dark-blue: rgb(24, 0, 41);
+    --almost-black-blue: rgb(1, 0, 32);
+    --white: rgb(247, 247, 247);
+    --aqua: rgb(0, 175, 175);
+    --purple: rgb(163, 0, 122);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: var(--dark-blue);
+    height: 100vh;
+}
+.navbar {
+    background-color: var(--almost-black-blue);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav__logo-container{
+    height: 55px;
+}
+.nav__text {
+    color: var(--aqua);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+i {
+    color: var(--white);
+}
+.aside-menu {
+    background-color: var(--almost-black-blue);
+    height: calc(100vh - 87px);
+
+}
+.aside-menu__ul {
+    margin: 0;
+}
+table {
+    color: var(--white);
+    width: 10rem;
+    margin: 2rem;
+    text-align: center;
+    height: fit-content;
+}
+table th{
+    padding: 10px 50px;
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+table td {
+    padding: 20px 0;
+}
+.table-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+.category {
+    width: fit-content;
+    height: fit-content;
+    margin: 0.2rem 1rem;
+    border: 2.5px solid var(--white);
+    display: flex;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: white;
+    padding: 1rem;
+}
+
+.category h5 {
+    margin: 0;
+    
+}
+.category :hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border-radius: 17px;
+}
+.element-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header {
+    background-color: var(--aqua);
+}
+
+.modalBtn-close {
+    background-color: rgb(236, 98, 43);
+}
+
+.modalBtn-save {
+    background-color: rgb(0, 183, 255);
+}

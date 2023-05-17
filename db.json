@@ -1,33 +1,14 @@
 {
   "users": [
     {
-      "usuario": "david",
-      "password": "123",
-      "number": "546877",
-      "Email": "yeiberbastos456@gmail.com",
-      "id": 8
-    },
-    {
-      "name": "sicer",
+      "name": "yeiber",
       "password": "123",
       "number": "3108693516",
-      "email": "yeibersaidbastosrodriguez@gmail.com",
-      "id": 9
-    }
-  ],
-  "categorias": [
-    {
-      "name": "noel",
+      "email": "yeibersaidbastos@gmail.com",
       "id": 1
     }
   ],
-  "productos": [
-    {
-      "name": "juan",
-      "product": "afa",
-      "price": "534",
-      "id": 1
-    }
-  ],
+  "categorias": [],
+  "productos": [],
   "Clientes": []
 }
