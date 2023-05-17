@@ -9,18 +9,17 @@ fetch('http://localhost:3000/users')
 			idCell.textContent = user.id;
 			row.appendChild(idCell);
 
+			const NombreCell = document.createElement('td');
+			NombreCell.textContent = user.Nombre;
+			row.appendChild(NombreCell);
 
-			const nameCell = document.createElement('td');
-			nameCell.textContent = user.name;
-			row.appendChild(nameCell);
+			const passwordCell = document.createElement('td');
+			passwordCell.textContent = user.password;
+			row.appendChild(passwordCell);
 
-			const numberCell = document.createElement('td');
-			numberCell.textContent = user.number;
-			row.appendChild(numberCell);
-
-			const addressCell = document.createElement('td');
-			addressCell.textContent = user.address;
-			row.appendChild(addressCell);
+			const EmailCell = document.createElement('td');
+			EmailCell.textContent = user.Email;
+			row.appendChild(EmailCell);
 
 			const actionsCell = document.createElement('td');
 			const detailsButton = document.createElement('button');
@@ -55,23 +54,3 @@ fetch('http://localhost:3000/users')
 	.catch(error => {
 		console.error('Error al obtener usuarios:', error);
 	});
-
-	function displayData(data) {
-		const row = document.createElement('tr');
-		const idCell = document.createElement('td');
-		const nameCell = document.createElement('td');
-		const passwordCell = document.createElement('td');
-		const emailCell = document.createElement('td')
-		
-		idCell.textContent = data.id;
-		nameCell.textContent = data.name;
-		passwordCell.textContent = data.password;
-		emailCell.textContent = data.email;
-
-
-
-
-
-
-
-	}

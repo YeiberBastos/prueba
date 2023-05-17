@@ -24,65 +24,95 @@
     <script src="js bootstrap/bootstrap.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <script src="js/modalusuarios.js" defer></script>
+    <style>
+      @import url('https://fonts.cdnfonts.com/css/race-freak');
+      </style>
     <title>registrate</title>
 </head>
 
 <body>
-    <div class="section">
+    <div class="section" >
+      <div class="wrap">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Iniciar sesión
+        </button>
+      </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Iniciar sesión
-                      </button>
-                    
+                <div class="col-2">           
                     <!-- Modal de registro -->
                     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="registerModalLabel">Registro de usuario</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Cerrar"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="registerForm">
-                                        <div class="form-group">
-                                          <label for="name-input">Nombre:</label>
-                                          <input type="text" id="name-input" name="name-input" required><br>
+                            <div class="modal-content" style="width: 20%;">                                
+                                <div class="wrapper">
+                                  <div class="title">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
 
-                                          <label for="password">Contraseña:</label>
-                                          <input type="password" name="password" class="form-control" required>                               
-                                      
-                                          <label for="number-input">Número:</label>
-                                          <input type="tel" id="number-input" name="number-input" required><br>
-                                      
-                                          <label for="Email-input">Correo:</label>
-                                          <input type="text" id="Email-input" name="Email-input" required><br>
-                                          <button type="submit" class="btn btn-primary">Registrarse</button>
-                                    </form>
-                                </div>
-                            </div>
+                                     Registrate
+                                  </div>
+                                  <form id="registerForm">
+                                    
+                                      <div class="field">
+                                        <input type="text" id="name-input" name="name" class="form-control" required>
+                                        <label for="name-input">Nombre</label>
+                                      </div>
+                                      <div class="field">
+                                          <input type="password" id="password-input" name="password" class="form-control" required>
+                                          <label for="password-input">Password</label>
+                                      </div>
+                                      <div class="field">                                     
+                                            <input type="tel" id="number-input" name="number" class="form-control" required>
+                                            <label for="tel-input">Número</label>
+                                        </div>
+                                        <div class="field">                                        
+                                            <input type="email" id="email-input" name="email" class="form-control" required>
+                                            <label for="email-input">Correo</label>
+                                      </div>
+                              
+                                        <button type="submit" class="btn btn-primary">Registrarse</button>
+
+                                  </form>
+                               </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                     <h2>SISTEMA DE <br> FACTURACION Y <br> MARKETING</h2>
                     <h1>CAMPUS <br> 2.0</h1>
                     <!-- boton registro -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
                         Registrarse
                       </button>
+                    
                     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
+                          <div class="modal-content" style="width: 80%;">
+                            
                             <div class="modal-header">
-                              <h5 class="modal-title" id="loginModalLabel">Inicio de sesión</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                            </div>
-                            <div class="modal-body">
-                              <form id="loginForm">
+                              <div class="wrapper">
+                                <div class="title">
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                   iciar sesion
+                                </div>
+                                <form id="loginForm">
+                                  
+                                    <div class="field">
+                                      <input type="text" id="name-input" name="name-input" class="form-control" required>
+                                      <label for="name-input">usuario</label>
+                                    </div>
+                                    <div class="field">
+                                        <input type="password" id="password-input" name="password" class="form-control" required>
+                                        <label for="password-input">Password</label>
+                                    </div>
+                            
+                                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
+                                </form>
+                             </div>
+
+
+                              <!-- <form id="loginForm">
                                 <form id="registerForm">
                                     <div class="form-group">
                                         <label for="username">Nombre de Usuario:</label>
@@ -93,12 +123,16 @@
                                         <input type="password" name="password" class="form-control" required>
                                       </div>
                                       <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                              </form>
+                              </form> -->
                             </div>
                           </div>
                         </div>
                       </div>
                 </div>
+                
+            </div>
+            <div class="imagen col-sm-12 col-lg-10" >
+              <img src="img/astro.png" alt="" width="1150px">
             </div>
         </div>
     </div>
